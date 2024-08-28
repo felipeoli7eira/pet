@@ -7,3 +7,5 @@ Route::match(['get', 'post'], '/', fn() => ResponseHandle::sendError(
     message: 'Faça autenticação para usar os recursos disponíveis',
     httpCode: \Symfony\Component\HttpFoundation\Response::HTTP_OK
 ))->name('home');
+
+require __DIR__ . '/users.php';
