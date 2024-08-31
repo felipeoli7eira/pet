@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Utils\ResponseHandle;
+use App\Http\ResponseHandle;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
@@ -24,7 +24,7 @@ class BaseRequest extends FormRequest
         throw new HttpResponseException(
             ResponseHandle::sendError(
                 message: 'Erro na requisição',
-                responseData: ['error' => $validator->errors()->first()]
+                responseData: ['errors.first' => $validator->errors()->first()]
             )
         );
     }
