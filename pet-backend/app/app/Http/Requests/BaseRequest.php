@@ -24,7 +24,8 @@ class BaseRequest extends FormRequest
         throw new HttpResponseException(
             ResponseHandle::sendError(
                 message: 'Erro na requisição',
-                responseData: ['errors.first' => $validator->errors()->first()]
+                responseData: ['errors.first' => $validator->errors()->first()],
+                httpCode: \Symfony\Component\HttpFoundation\Response::HTTP_BAD_REQUEST
             )
         );
     }

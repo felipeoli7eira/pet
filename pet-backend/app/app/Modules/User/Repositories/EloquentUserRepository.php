@@ -8,5 +8,5 @@ use App\Interfaces\RepositoryInterface;
 
 class EloquentUserRepository extends User implements RepositoryInterface
 {
-    // Implementa métodos adicionais, se necessário
+    // Implementar métodos adicionais, se necessário.
 }

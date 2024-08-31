@@ -5,6 +5,7 @@ namespace App\Http;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Response;
 use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class ResponseHandle
 {
@@ -13,7 +14,7 @@ class ResponseHandle
     *
     * @return \Illuminate\Http\JsonResponse
     */
-    public static function sendSuccess(?string $message = null, ?array $responseData = null, ?array $additionalData = null, ?int $httpCode = null): JsonResponse
+    public static function sendSuccess(?string $message = null, null|array|LengthAwarePaginator $responseData = null, ?array $additionalData = null, ?int $httpCode = null): JsonResponse
     {
         if (is_null($message)) {
             $message = 'Ok';

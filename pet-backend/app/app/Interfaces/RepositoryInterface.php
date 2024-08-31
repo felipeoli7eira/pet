@@ -11,11 +11,11 @@ interface RepositoryInterface
 
     public static function create(array $attributes): Model|null;
 
-    public static function find(int $resourceId): Model|null;
+    public static function find(string $resourceId): Model|null;
 
-    public static function delete(int $resourceId): int;
+    public static function delete(string $resourceId): int;
 
-    public static function update(int $resourceId, array $attributes): int;
+    public static function update(string $resourceId, array $attributes): int;
 
     public static function model(): Model;
 }

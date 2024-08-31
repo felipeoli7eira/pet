@@ -13,20 +13,27 @@ class FindOneRequestRules extends BaseRequest
         return true;
     }
 
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'id' => $this->route('id'),
+        ]);
+    }
+
     public function rules(): array
     {
-        return [];
+        return [
+            'id' => ['required', 'string', 'size:26', 'exists:users,id']
+        ];
     }
 
     public function messages(): array
     {
-        return [];
-    }
-
-    public function passedValidation()
-    {
-        $this->replace([
-            'id' => (int) $this->id
-        ]);
+        return [
+            'id.required' => 'O ID do usuário é obrigatório.',
+            'id.string'   => 'O ID do usuário está fora dos padrões estabelecidos.',
+            'id.size'     => 'O ID do usuário está fora dos padrões estabelecidos.',
+            'id.exists'   => 'O usuário não foi encontrado.',
+        ];
     }
 }

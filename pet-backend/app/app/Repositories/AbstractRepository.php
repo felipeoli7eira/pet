@@ -22,7 +22,7 @@ abstract class AbstractRepository implements RepositoryInterface
         return self::model()::all();
     }
 
-    public static function find(int $resourceId): Model | null
+    public static function find(string $resourceId): Model | null
     {
         return self::model()::query()->find($resourceId);
     }
@@ -32,12 +32,12 @@ abstract class AbstractRepository implements RepositoryInterface
         return self::model()::query()->create($attributes);
     }
 
-    public static function delete(int $resourceId): int
+    public static function delete(string $resourceId): int
     {
         return self::model()::query()->where(['id' => $resourceId])->delete();
     }
 
-    public static function update(int $resourceId, array $attributes): int
+    public static function update(string $resourceId, array $attributes): int
     {
         return self::model()::query()->where(['id' => $resourceId])->update($attributes);
     }
