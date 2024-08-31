@@ -4,7 +4,7 @@ namespace App\Modules\User\Requests;
 
 use App\Http\Requests\BaseRequest;
 
-class FindAllRequest extends BaseRequest
+class CreateRequestRules extends BaseRequest
 {
     protected $stopOnFirstFailure = true;
 
