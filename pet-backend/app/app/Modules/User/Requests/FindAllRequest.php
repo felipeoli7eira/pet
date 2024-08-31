@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Users;
+namespace App\Modules\User\Requests;
 
 use App\Http\Requests\BaseRequest;
 
-class All extends BaseRequest
+class FindAllRequest extends BaseRequest
 {
     protected $stopOnFirstFailure = true;
 
