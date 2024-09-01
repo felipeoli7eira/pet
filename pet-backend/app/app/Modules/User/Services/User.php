@@ -71,7 +71,11 @@ class User
                 $user = $this->repository::find($resourceId);
 
                 if (! Hash::check($resourcePayload['current_password'], $user->password)) {
-                    return ResponseHandle::sendError('Erro', ['thMessage' => 'Senha atual não confere']);
+                    return ResponseHandle::sendError(
+                        message: 'Erro',
+                        responseData: ['thMessage' => 'Senha atual não confere'],
+                        httpCode: \Symfony\Component\HttpFoundation\Response::HTTP_BAD_REQUEST
+                    );
                 }
 
                 $resourcePayload['password'] = $resourcePayload['new_password'];
@@ -85,5 +89,57 @@ class User
         }
 
         return ResponseHandle::sendSuccess('Sucesso', ['updateResult' => $response]);
+    }
+
+    public function login(array $resourcePayload): JsonResponse
+    {
+        try {
+            $user = $this->repository->model()->query()->where('email', $resourcePayload['email']);
+
+            if (! $user->exists()) {
+                return ResponseHandle::sendError(
+                    message: 'E-mail ou senha não confere',
+                    httpCode: \Symfony\Component\HttpFoundation\Response::HTTP_BAD_REQUEST
+                );
+            }
+
+            $user = $user->first();
+
+            if (! Hash::check($resourcePayload['password'], $user->password)) {
+                return ResponseHandle::sendError(
+                    message: 'E-mail ou senha não confere',
+                    httpCode: \Symfony\Component\HttpFoundation\Response::HTTP_BAD_REQUEST
+                );
+            }
+
+            $user->tokens()->delete();
+
+            $token = $user->createToken($user->email, [$user->doctor ? 'doctor' : 'receptionist'])->plainTextToken;
+
+            $response = [
+                'token' => $token,
+                'user'  => $user->toArray(),
+            ];
+
+        } catch (Throwable $throwable) {
+            return ResponseHandle::sendError('Erro', ['thMessage' => $throwable->getMessage()]);
+        }
+
+        return ResponseHandle::sendSuccess('Sucesso', $response);
+    }
+
+    public function logout(): JsonResponse
+    {
+        try {
+            $user = auth()->user();
+
+            if ($user) {
+                $user->tokens()->delete();
+            }
+        } catch (Throwable $throwable) {
+            return ResponseHandle::sendError('Erro', ['thMessage' => $throwable->getMessage()]);
+        }
+
+        return ResponseHandle::sendSuccess('LogOut realizado');
     }
 }

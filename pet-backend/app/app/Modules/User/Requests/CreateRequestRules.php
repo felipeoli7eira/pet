@@ -69,7 +69,7 @@ class CreateRequestRules extends BaseRequest
         $inputs = [
             'name'     => $this->name,
             'email'    => $this->email,
-            'password' => Hash::make($this->new_password),
+            'password' => Hash::make($this->password),
         ];
 
         if ($this->filled('doctor') && boolval($this->doctor)) {

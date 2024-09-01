@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Symfony\Component\Uid\Ulid;
-use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -45,10 +43,4 @@ class User extends Authenticatable
         'created_at' => 'datetime:d/m/Y H:i',
         'updated_at' => 'datetime:d/m/Y H:i',
     ];
-
-    // public function newUniqueId()
-    // {
-    //     // return Ulid::generate()->string;
-    //     return Str::ulid()->toBase32();
-    // }
 }

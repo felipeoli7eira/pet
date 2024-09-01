@@ -3,10 +3,14 @@
 use App\Http\ResponseHandle;
 use Illuminate\Support\Facades\Route;
 
-Route::match(['get', 'post'], '/', fn() => ResponseHandle::sendError(
+$defaultErrorResponse = ResponseHandle::sendError(
     message: 'Faça autenticação para usar os recursos disponíveis',
     httpCode: \Symfony\Component\HttpFoundation\Response::HTTP_OK
-))->name('home');
+);
+
+Route::match(['get', 'post'], '/', fn() => $defaultErrorResponse)->name('home');
+
+Route::match(['get', 'post'], '/needs-auth', fn() => $defaultErrorResponse)->name('login');
 
 /**
  * includes route file from a module.
