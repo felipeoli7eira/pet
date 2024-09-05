@@ -8,7 +8,7 @@ use App\Interfaces\RepositoryInterface;
 use App\Modules\User\Models\User as UserModel;
 use App\Repositories\AbstractRepository;
 
-abstract class User extends AbstractRepository implements RepositoryInterface
+class User extends AbstractRepository implements RepositoryInterface
 {
     protected static string $model = UserModel::class;
 }

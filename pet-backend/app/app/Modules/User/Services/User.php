@@ -5,14 +5,14 @@ declare(strict_types = 1);
 namespace App\Modules\User\Services;
 
 use App\Http\ResponseHandle;
-use App\Modules\User\Repositories\EloquentUserRepository;
+use App\Modules\User\Repositories\User as UserRepository;
 use Throwable;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;
 
 class User
 {
-    public function __construct(private readonly EloquentUserRepository $repository)
+    public function __construct(private readonly UserRepository $repository)
     {
     }
 
