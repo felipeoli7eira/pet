@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\User\Requests;
+namespace App\Modules\Pet\Requests;
 
 use App\Http\Requests\BaseRequest;
 
@@ -23,17 +23,16 @@ class DeleteRequestRules extends BaseRequest
     public function rules(): array
     {
         return [
-            'id' => ['required', 'string', 'size:26', 'exists:users,id']
+            'id' => ['required', 'ulid', 'exists:pets,id']
         ];
     }
 
     public function messages(): array
     {
         return [
-            'id.required' => 'O ID do usuário é obrigatório.',
-            'id.string'   => 'O ID do usuário está fora dos padrões estabelecidos.',
-            'id.size'     => 'O ID do usuário está fora dos padrões estabelecidos.',
-            'id.exists'   => 'O usuário não foi encontrado.',
+            'id.required' => 'O ID é obrigatório.',
+            'id.ulid'     => 'O ID está fora dos padrões estabelecidos.',
+            'id.exists'   => 'O pet não foi encontrado.',
         ];
     }
 }

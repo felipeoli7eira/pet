@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\User\Requests;
+namespace App\Modules\Pet\Requests;
 
 use App\Http\Requests\BaseRequest;
 
