@@ -30,3 +30,4 @@ function moduleRoutes(string $moduleName): void {
 moduleRoutes('User');
 moduleRoutes('Customer');
 moduleRoutes('Pet');
+moduleRoutes('Consultations');

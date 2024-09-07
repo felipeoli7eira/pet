@@ -17,13 +17,8 @@ return new class extends Migration
             $table->tinyInteger('birth_month');
             $table->year('birth_year');
 
-            // $table->
-
-            $table->foreignUlid('animal_type_id')->constrained();
-            $table->foreignUlid('customer_id')->constrained();
-
-            // $table->foreign('animal_type_id')->references('id')->on('animal_types');
-            // $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreignUlid('animal_type_id')->constrained('animal_types');
+            $table->foreignUlid('customer_id')->constrained('customers');
 
             $table->timestamps();
         });
