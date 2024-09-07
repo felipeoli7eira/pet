@@ -1,0 +1,2404 @@
+{
+	"info": {
+		"_postman_id": "b42d9360-c4a7-4fcb-8706-ddfb2c4f9681",
+		"name": "Pet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26486378"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"João Marcos\",\r\n    \"email\": \"me.joaooliveira@gmail.com\",\r\n    \"cpf\": \"88416860068\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/customer",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"João Marcos Alves de Oliveira\",\r\n    \"email\": \"me.joaooliveira@gmail.com\",\r\n    \"cpf\": \"03364266239\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api}}/customer",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"customer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 06 Sep 2024 01:40:30 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": {\n        \"name\": \"João Marcos Alves de Oliveira\",\n        \"email\": \"me.joaooliveira@gmail.com\",\n        \"cpf\": \"03364266239\",\n        \"id\": \"01j72ftx48y958wj96rjx6nxa5\",\n        \"updated_at\": \"06/09/2024 01:40\",\n        \"created_at\": \"06/09/2024 01:40\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find one",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/customers/01j70061cwsvx4tmfdvw1aqp9v",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"customers",
+								"01j70061cwsvx4tmfdvw1aqp9v"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/users",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 31 Aug 2024 17:49:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Felipe Oliveira\",\n            \"email\": \"me.felipeoliveira@gmail.com\",\n            \"doctor\": 1,\n            \"receptionist\": 0,\n            \"created_at\": \"31/08/2024 17:48\",\n            \"updated_at\": \"31/08/2024 17:48\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Find all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/customers",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/users",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 31 Aug 2024 17:49:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Felipe Oliveira\",\n            \"email\": \"me.felipeoliveira@gmail.com\",\n            \"doctor\": 1,\n            \"receptionist\": 0,\n            \"created_at\": \"31/08/2024 17:48\",\n            \"updated_at\": \"31/08/2024 17:48\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"name\": \"Felipe Cliente\"\r\n    \"email\": \"cliente@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/customers/01j70061cwsvx4tmfdvw1aqp9v",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"customers",
+								"01j70061cwsvx4tmfdvw1aqp9v"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/customers/01j70061cwsvx4tmfdvw1aqp9v",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"customers",
+								"01j70061cwsvx4tmfdvw1aqp9v"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/users",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 31 Aug 2024 17:49:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Felipe Oliveira\",\n            \"email\": \"me.felipeoliveira@gmail.com\",\n            \"doctor\": 1,\n            \"receptionist\": 0,\n            \"created_at\": \"31/08/2024 17:48\",\n            \"updated_at\": \"31/08/2024 17:48\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Find all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/users",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/users",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 31 Aug 2024 17:49:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Felipe Oliveira\",\n            \"email\": \"me.felipeoliveira@gmail.com\",\n            \"doctor\": 1,\n            \"receptionist\": 0,\n            \"created_at\": \"31/08/2024 17:48\",\n            \"updated_at\": \"31/08/2024 17:48\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Find one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/users/01j6n17zsehgdkegq0w58jhyp2",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"users",
+								"01j6n17zsehgdkegq0w58jhyp2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/users",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 31 Aug 2024 17:49:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Felipe Oliveira\",\n            \"email\": \"me.felipeoliveira@gmail.com\",\n            \"doctor\": 1,\n            \"receptionist\": 0,\n            \"created_at\": \"31/08/2024 17:48\",\n            \"updated_at\": \"31/08/2024 17:48\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/user/01j6qnv8z4gtqs3cwk0j80fezq",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"user",
+								"01j6qnv8z4gtqs3cwk0j80fezq"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/users",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 31 Aug 2024 17:49:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Felipe Oliveira\",\n            \"email\": \"me.felipeoliveira@gmail.com\",\n            \"doctor\": 1,\n            \"receptionist\": 0,\n            \"created_at\": \"31/08/2024 17:48\",\n            \"updated_at\": \"31/08/2024 17:48\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Doctor User (Payload Example)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Dr. Carlos Chagas\",\r\n    \"email\": \"carlos.chagas@petapp.com\",\r\n    \"password\": \"password\",\r\n    \"doctor\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/user",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Receptionist User (Payload Example)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Alice\",\r\n    \"email\": \"alice@petapp.com\",\r\n    \"password\": \"password\",\r\n    \"receptionist\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/user",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // if \"new_password\" is sent, then \"current_password\" and \"new_password_confirmation\" will be validated, in addition to checking whether the current password matches.\r\n\r\n    // \"current_password\": \"\",\r\n    // \"new_password\": \"\",\r\n    // \"new_password_confirmation\": \"\"\r\n\r\n    // \"email\": \"\",\r\n    // \"name\": \"\",\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/user/01j6n17zsehgdkegq0w58jhyp2",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"user",
+								"01j6n17zsehgdkegq0w58jhyp2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pet",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bruce\",\r\n    \"birth_month\": 7,\r\n    \"birth_year\": 2023,\r\n    \"animal_type_id\": \"01J770M93R9HPG3JKFE3GCVXN0\",\r\n    \"customer_id\": \"01j770ngpd57sbcnj3ptcgx7d6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/pet",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"pet"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Bruce\",\r\n    \"birth_month\": 7,\r\n    \"birth_year\": 2023,\r\n    \"animal_type_id\": \"01J72E0CNVYRTHN47D1PRKSSGY\",\r\n    \"customer_id\": \"01j72ftx48y958wj96rjx6nxa5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api}}/pet",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"pet"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 06 Sep 2024 01:42:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": {\n        \"name\": \"Bruce\",\n        \"birth_month\": 7,\n        \"birth_year\": 2023,\n        \"animal_type_id\": \"01J72E0CNVYRTHN47D1PRKSSGY\",\n        \"customer_id\": \"01j72ftx48y958wj96rjx6nxa5\",\n        \"id\": \"01j72fz58tn4ky88je5phekkrf\",\n        \"updated_at\": \"06/09/2024 01:42\",\n        \"created_at\": \"06/09/2024 01:42\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/pets",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"pets"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/pets",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"pets"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 06 Sep 2024 01:44:31 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": \"01j72fz58tn4ky88je5phekkrf\",\n                \"name\": \"Bruce\",\n                \"birth_month\": 7,\n                \"birth_year\": \"2023\",\n                \"animal_type_id\": \"01J72E0CNVYRTHN47D1PRKSSGY\",\n                \"customer_id\": \"01j72ftx48y958wj96rjx6nxa5\",\n                \"created_at\": \"06/09/2024 01:42\",\n                \"updated_at\": \"06/09/2024 01:42\"\n            }\n        ],\n        \"first_page_url\": \"http://localhost/api/pets?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost/api/pets?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Anterior\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/pets?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Próximo &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost/api/pets\",\n        \"per_page\": 15,\n        \"prev_page_url\": null,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/pets/01j76y2tkfyyfq05xhc9zy51rd",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"pets",
+								"01j76y2tkfyyfq05xhc9zy51rd"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api}}/pets/01j72fz58tn4ky88je5phekkrf",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"pets",
+										"01j72fz58tn4ky88je5phekkrf"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 06 Sep 2024 01:46:28 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": {\n        \"id\": \"01j72fz58tn4ky88je5phekkrf\",\n        \"name\": \"Bruce\",\n        \"birth_month\": 7,\n        \"birth_year\": \"2023\",\n        \"animal_type_id\": \"01J72E0CNVYRTHN47D1PRKSSGY\",\n        \"customer_id\": \"01j72ftx48y958wj96rjx6nxa5\",\n        \"created_at\": \"06/09/2024 01:42\",\n        \"updated_at\": \"06/09/2024 01:42\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bruce\"\r\n    // \"birth_month\": 0,\r\n    // \"birth_year\": 0,\r\n    // \"animal_type_id\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/pets/01j72fz58tn4ky88je5phekkrf",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"pets",
+								"01j72fz58tn4ky88je5phekkrf"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Bruce\"\r\n    // \"birth_month\": 0,\r\n    // \"birth_year\": 0,\r\n    // \"animal_type_id\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api}}/pets/01j72fz58tn4ky88je5phekkrf",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"pets",
+										"01j72fz58tn4ky88je5phekkrf"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 06 Sep 2024 01:54:20 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": {\n        \"updateResult\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/pets/01j72fz58tn4ky88je5phekkrf",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"pets",
+								"01j72fz58tn4ky88je5phekkrf"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/pets/01j72fz58tn4ky88je5phekkrf",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"pets",
+										"01j72fz58tn4ky88je5phekkrf"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 06 Sep 2024 01:55:47 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": {\n        \"result\": 1\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Consultation",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2024-09-09 13:00\",\r\n    \"symptoms\": \"Desânimo\",\r\n    \"doctor_id\": \"01j770mm6bgdj4qvewtzpx96k7\",\r\n    \"customer_id\": \"01j770ngpd57sbcnj3ptcgx7d6\",\r\n    \"pet_id\": \"01j770ramts143wqwx16saxk5j\",\r\n    \"notes\": \"...\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/consultation",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"consultation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"date\": \"2024-09-09 13:00\",\r\n    // \"symptoms\": \"Desânimo\",\r\n    // \"doctor_id\": \"01j770mm6bgdj4qvewtzpx96k7\",\r\n    // \"diagnostic\": \"\",\r\n    // \"status\": \"\", // scheduled, canceled or done\r\n    \"status_details\": \"Possibilidade de atraso do cliente\"\r\n    // \"notes\": \"\",\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/consultations/01j774m5d53m06g5z9sg4kt09n",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"consultations",
+								"01j774m5d53m06g5z9sg4kt09n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/consultations",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"consultations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read One",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/consultations/01j774m5d53m06g5z9sg4kt09n",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"consultations",
+								"01j774m5d53m06g5z9sg4kt09n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/consultations/01j774m5d53m06g5z9sg4kt09n",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"consultations",
+								"01j774m5d53m06g5z9sg4kt09n"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/pets/01j72fz58tn4ky88je5phekkrf",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"pets",
+										"01j72fz58tn4ky88je5phekkrf"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 06 Sep 2024 01:55:47 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": {\n        \"result\": 1\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Auth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"try\r",
+									"{\r",
+									"    const responseData = JSON.parse(responseBody);\r",
+									"    pm.collectionVariables.set('authToken', responseData.data.token);\r",
+									"}\r",
+									"catch(error)\r",
+									"{\r",
+									"    console.clear();\r",
+									"    console.log('Script Post-Response Error: ', error);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"alice@petapp.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/login",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"me.felipeoliveira@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api}}/login",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 06 Sep 2024 01:37:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=99"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": {\n        \"token\": \"1|P5QS09xNvcBYtkbeQRKs6CuUptFKLpnfPwgNhwrhfaf07896\",\n        \"user\": {\n            \"id\": \"01j72fnw53kkhnmwhndeeskbf5\",\n            \"name\": \"Felipe Oliveira\",\n            \"email\": \"me.felipeoliveira@gmail.com\",\n            \"doctor\": 1,\n            \"receptionist\": 0,\n            \"created_at\": \"06/09/2024 01:37\",\n            \"updated_at\": \"06/09/2024 01:37\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "LogOut",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set('authToken', '-');"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|nlJm4qISysXRTZPLybL579rFghZCX8mPkIQ8nUjgdd219a9b",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/logout",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ANIMAL TYPES CRUD",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pônei\",\r\n    \"details\": \"Alemão\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/animal-type",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"animal-type"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Bruce\",\r\n    \"birth_month\": 7,\r\n    \"birth_year\": 2023,\r\n    \"animal_type_id\": \"01J72E0CNVYRTHN47D1PRKSSGY\",\r\n    \"customer_id\": \"01j72ftx48y958wj96rjx6nxa5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api}}/pet",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"pet"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 06 Sep 2024 01:42:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": {\n        \"name\": \"Bruce\",\n        \"birth_month\": 7,\n        \"birth_year\": 2023,\n        \"animal_type_id\": \"01J72E0CNVYRTHN47D1PRKSSGY\",\n        \"customer_id\": \"01j72ftx48y958wj96rjx6nxa5\",\n        \"id\": \"01j72fz58tn4ky88je5phekkrf\",\n        \"updated_at\": \"06/09/2024 01:42\",\n        \"created_at\": \"06/09/2024 01:42\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/animal-types",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"animal-types"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/pets",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"pets"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 06 Sep 2024 01:44:31 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": \"01j72fz58tn4ky88je5phekkrf\",\n                \"name\": \"Bruce\",\n                \"birth_month\": 7,\n                \"birth_year\": \"2023\",\n                \"animal_type_id\": \"01J72E0CNVYRTHN47D1PRKSSGY\",\n                \"customer_id\": \"01j72ftx48y958wj96rjx6nxa5\",\n                \"created_at\": \"06/09/2024 01:42\",\n                \"updated_at\": \"06/09/2024 01:42\"\n            }\n        ],\n        \"first_page_url\": \"http://localhost/api/pets?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost/api/pets?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Anterior\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost/api/pets?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Próximo &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost/api/pets\",\n        \"per_page\": 15,\n        \"prev_page_url\": null,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/animal-types/01j776v5z9ye7a3eavd134tmxe",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"animal-types",
+								"01j776v5z9ye7a3eavd134tmxe"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api}}/pets/01j72fz58tn4ky88je5phekkrf",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"pets",
+										"01j72fz58tn4ky88je5phekkrf"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 06 Sep 2024 01:46:28 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": {\n        \"id\": \"01j72fz58tn4ky88je5phekkrf\",\n        \"name\": \"Bruce\",\n        \"birth_month\": 7,\n        \"birth_year\": \"2023\",\n        \"animal_type_id\": \"01J72E0CNVYRTHN47D1PRKSSGY\",\n        \"customer_id\": \"01j72ftx48y958wj96rjx6nxa5\",\n        \"created_at\": \"06/09/2024 01:42\",\n        \"updated_at\": \"06/09/2024 01:42\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pônei update\",\r\n    \"details\": \"...\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/animal-types/01j776v5z9ye7a3eavd134tmxe",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"animal-types",
+								"01j776v5z9ye7a3eavd134tmxe"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Bruce\"\r\n    // \"birth_month\": 0,\r\n    // \"birth_year\": 0,\r\n    // \"animal_type_id\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api}}/pets/01j72fz58tn4ky88je5phekkrf",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"pets",
+										"01j72fz58tn4ky88je5phekkrf"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 06 Sep 2024 01:54:20 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": {\n        \"updateResult\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/animal-types/01j776v5z9ye7a3eavd134tmxe",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"animal-types",
+								"01j776v5z9ye7a3eavd134tmxe"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/pets/01j72fz58tn4ky88je5phekkrf",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"pets",
+										"01j72fz58tn4ky88je5phekkrf"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 06 Sep 2024 01:55:47 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.61 (Debian)"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_text\": \"success\",\n    \"message\": \"Sucesso\",\n    \"data\": {\n        \"result\": 1\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api}}",
+					"host": [
+						"{{api}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api",
+			"value": "http://localhost/api",
+			"type": "string"
+		},
+		{
+			"key": "authToken",
+			"value": "-",
+			"type": "string"
+		}
+	]
+}
