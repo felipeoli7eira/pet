@@ -31,3 +31,4 @@ moduleRoutes('User');
 moduleRoutes('Customer');
 moduleRoutes('Pet');
 moduleRoutes('Consultations');
+moduleRoutes('AnimalTypes');

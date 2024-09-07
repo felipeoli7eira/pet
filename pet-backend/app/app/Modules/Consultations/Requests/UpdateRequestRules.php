@@ -32,6 +32,8 @@ class UpdateRequestRules extends BaseRequest
             'status'         => ['nullable', 'string', 'in:scheduled,canceled,done'],
             'status_details' => ['nullable', 'string', 'min:3', 'max:255'],
             'notes'          => ['nullable', 'string', 'min:3', 'max:255'],
+
+            'id' => ['required', 'ulid', Rule::exists('consultations', 'id')]
         ];
 
         return $rules;
@@ -40,6 +42,10 @@ class UpdateRequestRules extends BaseRequest
     public function messages(): array
     {
         return [
+            'id.date'            => 'O id da consulta deve ser informado.',
+            'id.ulid'            => 'O id da consulta está inválido.',
+            'id.exists'          => 'Consulta não encontrada.',
+
             'date.date'            => 'O valor fornecido para a data não é válido.',
             'date.date_format'     => 'A data deve estar no formato Y-m-d H:i.',
             'date.after'           => 'A data deve ser posterior à data e hora atuais.',
