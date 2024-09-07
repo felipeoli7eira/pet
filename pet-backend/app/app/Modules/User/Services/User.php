@@ -114,7 +114,10 @@ class User
 
             $user->tokens()->delete();
 
-            $token = $user->createToken($user->email, [$user->doctor ? 'doctor' : 'receptionist'])->plainTextToken;
+            $token = $user->createToken(
+                $user->email, [$user->doctor ? 'doctor' : 'receptionist'],
+                now()->addHour()
+            )->plainTextToken;
 
             $response = [
                 'token' => $token,
